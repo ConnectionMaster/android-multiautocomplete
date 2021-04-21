@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Teamwork.com
+ * Copyright 2017-present Teamwork.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,15 @@
 
 package com.teamwork.autocomplete.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.teamwork.autocomplete.filter.BaseTokenFilter;
 import com.teamwork.autocomplete.filter.TokenFilter;
-import com.teamwork.autocomplete.view.AutoCompleteViewHolder;
 import com.teamwork.autocomplete.view.AutoCompleteViewBinder;
+import com.teamwork.autocomplete.view.AutoCompleteViewHolder;
 
 /**
  * 'Null object' pattern implementation of an {@link TypeAdapterDelegate} that performs no operations.
@@ -32,6 +33,7 @@ import com.teamwork.autocomplete.view.AutoCompleteViewBinder;
  */
 public class NullTypeAdapterDelegate extends BaseTypeAdapterDelegate<Object> {
 
+    @SuppressWarnings("unused")
     private final NullViewBinder viewBinder = new NullViewBinder();
     private final NullTokenFilter filter = new NullTokenFilter();
 
@@ -49,6 +51,7 @@ public class NullTypeAdapterDelegate extends BaseTypeAdapterDelegate<Object> {
         return filter;
     }
 
+
     private static class NullViewBinder implements AutoCompleteViewBinder<Object> {
         @Override public long getItemId(@NonNull Object item) {
             return 0;
@@ -61,7 +64,6 @@ public class NullTypeAdapterDelegate extends BaseTypeAdapterDelegate<Object> {
 
         @Override
         public @NonNull AutoCompleteViewHolder getViewHolder(@NonNull View view) {
-            //noinspection ConstantConditions
             return null;
         }
 
@@ -69,6 +71,7 @@ public class NullTypeAdapterDelegate extends BaseTypeAdapterDelegate<Object> {
         public void bindData(@NonNull AutoCompleteViewHolder viewHolder, @NonNull Object item, @Nullable CharSequence constraint) {
         }
     }
+
 
     private static class NullTokenFilter extends BaseTokenFilter<Object> {
 

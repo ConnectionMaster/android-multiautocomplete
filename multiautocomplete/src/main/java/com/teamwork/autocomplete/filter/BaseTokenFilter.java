@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Teamwork.com
+ * Copyright 2017-present Teamwork.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
 
 package com.teamwork.autocomplete.filter;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.WorkerThread;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.WorkerThread;
 
 import com.teamwork.autocomplete.util.ConstraintComparator;
 

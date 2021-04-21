@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Teamwork.com
+ * Copyright 2017-present Teamwork.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,10 @@
 
 package com.teamwork.autocomplete.util;
 
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.widget.EditText;
+
+import androidx.annotation.Nullable;
 
 /**
  * Helper static methods for AutoComplete features.

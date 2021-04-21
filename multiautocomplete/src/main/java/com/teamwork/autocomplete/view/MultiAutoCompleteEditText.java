@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Teamwork.com
+ * Copyright 2017-present Teamwork.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,21 +17,22 @@
 package com.teamwork.autocomplete.view;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatMultiAutoCompleteTextView;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView;
 
 import java.lang.reflect.Field;
 
 /**
  * Subclass of {@link AppCompatMultiAutoCompleteTextView} for multi auto complete use.
  * <p>
- * The main reason for which this is necessary is that Android (sigh) didn't provide a listener for
- * {@link #onSelectionChanged(int, int)} cursor callbacks.
+ * The main reason for which this is necessary is that Android (sigh) didn't provide a listener for {@link #onSelectionChanged(int, int)}
+ * cursor callbacks.
  * <p>
- * We need that to start the filtering (and display the dropdown if necessary) when the user moves the cursor within
- * the {@link AppCompatMultiAutoCompleteTextView}.
+ * We need that to start the filtering (and display the dropdown if necessary) when the user moves the cursor within the {@link
+ * AppCompatMultiAutoCompleteTextView}.
  *
  * @author Marco Salis
  */
@@ -46,6 +47,7 @@ public class MultiAutoCompleteEditText extends AppCompatMultiAutoCompleteTextVie
          */
         boolean onSelectionChanged(int selStart, int selEnd);
     }
+
 
     private OnSelectionChangedListener listener;
 

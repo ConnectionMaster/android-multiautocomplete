@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Teamwork.com
+ * Copyright 2017-present Teamwork.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,16 +18,17 @@ package com.teamwork.autocomplete.adapter;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.CallSuper;
-import android.support.annotation.MainThread;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.VisibleForTesting;
-import android.support.annotation.WorkerThread;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+
+import androidx.annotation.CallSuper;
+import androidx.annotation.MainThread;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.VisibleForTesting;
+import androidx.annotation.WorkerThread;
 
 import com.teamwork.autocomplete.filter.TokenFilter;
 import com.teamwork.autocomplete.view.AutoCompleteViewBinder;
@@ -50,13 +51,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * A typed adapter for the auto complete view, used to provide a layout, data binding and filter options for a single
- * data type. It holds an {@link AutoCompleteViewBinder} and a {@link TokenFilter}.
+ * A typed adapter for the auto complete view, used to provide a layout, data binding and filter options for a single data type.
+ * It holds an {@link AutoCompleteViewBinder} and a {@link TokenFilter}.
  *
  * @author Marco Salis
  */
 // @ThreadSafe
-class BaseTypeAdapterDelegate<M> extends BaseAdapter implements TypeAdapterDelegate<M>, AutoCompleteTypeAdapter<M> {
+class BaseTypeAdapterDelegate<M>
+        extends BaseAdapter
+        implements TypeAdapterDelegate<M>, AutoCompleteTypeAdapter<M> {
 
     private final Executor computationExecutor;
     private final Handler mainThreadHandler;
